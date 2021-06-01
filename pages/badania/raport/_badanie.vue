@@ -87,7 +87,7 @@
         </vue-html2pdf>
       </section>
     </client-only>
-    {{test}}
+    
   </div>
 </template>
 
