@@ -7,23 +7,7 @@
     </card-top>
     
     <v-card elevation="5">
-        <v-card-title class="grey lighten-1"> Dane zbiornika</v-card-title>
-        <v-divider></v-divider>
-        <v-container>
-            <v-row justify="center">
-                <v-col>
-                  
-                </v-col>
-                <v-col md="1" cols="4">
-                    <v-text-field 
-                    v-model="zbiornik"
-                    ></v-text-field>
-                </v-col>
-            </v-row>
-            <v-form>
 
-            </v-form>
-        </v-container>
         <v-card-title class="grey lighten-1"> Pomiary zbiornika</v-card-title>
         <v-divider></v-divider>
     <v-form v-model="arkusz">
@@ -52,25 +36,21 @@
         </v-row>
       </v-container>
     </v-form>
-        
-    <v-card-title  class="grey lighten-1 d-flex justify-center "> 
-         Bormech sp. z o.o
-    </v-card-title>
-    <v-card-subtitle class="grey lighten-1 d-flex justify-center mb-10">BorAdmin v 0.0.2 alpha</v-card-subtitle>
-    </v-card>
-    {{as}}
+        <card-botton />
+  </v-card>
     </v-container>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import CardBotton from '~/components/CardBotton.vue'
 import CardBtn from '~/components/CardBtn.vue'
 import CardTop from '~/components/CardTop.vue'
 import { getters } from '~/store/badania'
 
 export default {
-  components: { CardTop, CardBtn },
+  components: { CardTop, CardBtn, CardBotton },
     data() {
         return {
             arkusz: {},

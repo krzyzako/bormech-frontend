@@ -59,7 +59,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer :absolute="!fixed" app>
+    <v-footer absolute="true" app padless fixed>
       <span>&copy; {{ new Date().getFullYear() }} Bormech sp. z o.o.</span>
     </v-footer>
     <snackbar></snackbar>

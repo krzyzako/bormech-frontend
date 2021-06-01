@@ -56,6 +56,7 @@
             <BadanieTab :tabs="zb.data" />
           </v-row>
         </v-container>
+        <card-botton />
       </v-card>
     </v-container>
     <client-only>
@@ -119,8 +120,8 @@ export default {
         margin: [10, 10],
         filename: `hehehe.pdf`,
         html2canvas: {
-          dpi: 198,
-          scale: 1,
+          dpi: 600,
+          scale: 3,
           useCORS: true,
         },
 
