@@ -2,7 +2,7 @@
   <div>
     <v-card elevation="2" outlined shaped>
       <v-card-title
-        >Edycja : {{ $store.state.homolog.homolog.approval }}  {{select.tank_display}} </v-card-title
+        >Edycja  : {{ $store.state.homolog.homolog.approval }}  {{select.tank_display}} </v-card-title
       >
       <v-divider class="mx-4" inset></v-divider>
       <v-card-text>
