@@ -1,7 +1,6 @@
 <template>
   <div id="wrapp">
     <v-container>
-
       <card-top>
         <card-btn color="lime accent-4" icon="mdi-arrow-left" text="Powrót" @click.native="$router.go(-1)" />
         <card-btn color="white" icon="mdi-printer" text="Drukuj" @click.native="print" />
