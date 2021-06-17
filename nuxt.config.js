@@ -39,7 +39,8 @@ export default {
     { src: '@/plugins/vue-html2pdf', mode: 'client' },
     {src: '~/plugins/vue-apexchart.js', mode: 'client'},
     { src: '@/plugins/numeric', mode: 'client' },
-    { src: '@/plugins/axios-url' },
+    { src: '@/plugins/mqtt.js', mode : 'client'},
+  //  { src: '@/plugins/axios-url' },
     ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -61,9 +62,9 @@ export default {
     '@nuxtjs/toast',
   ],
 
-  // axios: {
-  //   baseURL: 'http://10.1.1.223:8100', 
-  // },
+  axios: {
+    baseURL: 'http://10.8.0.4:8100', 
+  },
 
   toast: {
     position: 'top-center',
@@ -85,6 +86,7 @@ export default {
     middleware: ['auth']
   },
   auth: {
+    cookie: false,
     strategies: {
       local: {
 

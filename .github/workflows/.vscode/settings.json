@@ -1,0 +1,9 @@
+{
+    "colorize.languages": [
+    "javascript",
+    "vue"
+    // ...
+  ],
+  "colorize.colorized_colors": [
+    "HEXA"]
+}

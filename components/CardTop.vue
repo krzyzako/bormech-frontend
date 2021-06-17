@@ -1,6 +1,4 @@
 <template>
-    <div>
-
     <v-card
       shaped
         color="grey darken-1"
@@ -9,5 +7,4 @@
       >
       <slot></slot>
     </v-card>
-    </div>
 </template>

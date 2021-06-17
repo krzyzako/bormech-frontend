@@ -63,6 +63,7 @@
     </v-dialog>
   </v-card>
       </v-hover>
+
 </v-col>
 </template>
 <script>
@@ -70,7 +71,7 @@ import CardBtn from '../CardBtn.vue'
 export default {
   data() {
     return {
- 
+      mqtt_connect : false,
      tank: {},
       dialog: false,
     }
@@ -96,6 +97,7 @@ export default {
       this.$router.push(`badania/raport/${id}`)
     }
   },
+
   props: {
     badanie: Object,
   },

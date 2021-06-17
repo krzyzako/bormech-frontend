@@ -25,15 +25,32 @@
             <v-list-item-title class="white--text" v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
+         <v-list-item
+          v-if="mqtt_connect"
+          router
+          exact
+          to="/live"
+        >
+          <v-list-item-action>
+            <v-icon class="white--text">mdi-connection</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title class="white--text" >Live</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
 
     </v-navigation-drawer>
     <v-app-bar clipped-left fixed  color="grey darken-1" app>
       <v-app-bar-nav-icon class="white--text" @click.stop="drawer = !drawer" />
-
+      
       <v-toolbar-title class="white--text" v-text="title" />
       <v-spacer />
-
+     
+     <v-card v-if="mqtt_connect" outlined elevation="2" color="green darken-4" class="pa-2 flex headline">
+       <v-card-title v-show="1" class="justify-center grey--text ">Stacja włączona</v-card-title>
+     </v-card>
+      <v-spacer />
       <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
         <v-btn v-bind="attrs" v-on="on" value="favorites" @click="userLogout">
@@ -59,8 +76,8 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer absolute="true" app padless fixed>
-      <span>&copy; {{ new Date().getFullYear() }} Bormech sp. z o.o.</span>
+    <v-footer absolute app padless fixed>
+      <span>&copy; {{ new Date().getFullYear() }} Bormech sp. z o.o. {{mqtt_connect}}</span>
     </v-footer>
     <snackbar></snackbar>
   </v-app>
@@ -82,6 +99,7 @@ export default {
       drawer: false,
       fixed: false,
       mini : true,
+      mqtt_connect : false,
       items: [
         {
           icon: 'mdi-apps',
@@ -109,7 +127,34 @@ export default {
       } catch (err) {
         console.log(err)
       }
+    
     },
-  }
+    msg_mqtt() {
+        this.$msg.showMessage({content: 'Stacja niedostepna !',color: 'grey',})   
+    },
+    handler: function handler(event) {
+        this.$msg.showMessage({content: 'Stacja dostepna !',color: 'red',})  
+    }
+  },
+  watch: {
+    mqtt_connect: function(val) {
+      if (this.mqtt_connect) {
+        this.$msg.showMessage({content: 'Stacja dostepna !',color: 'red',})  
+
+      }else{
+        this.$msg.showMessage({content: 'Stacja niedostepna !',color: 'grey',})  
+      }
+    }
+  },
+  mounted () {
+    this.$mqtt.subscribe('#')
+  },
+  mqtt: {
+    'iot-2/panel/#' (data, topic) {
+      let msg = JSON.parse(data.toString())
+      this.mqtt_connect = msg.d.connected
+      console.log('iot-2/panel/', msg)
+    },
+  },
 }
 </script>

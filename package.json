@@ -23,10 +23,12 @@
     "lodash": "^4.17.21",
     "lodash.assign": "^4.2.0",
     "lodash.merge": "^4.6.2",
+    "mqtt": "^4.2.6",
     "nuxt": "^2.15.5",
     "vue-apexcharts": "^1.6.1",
     "vue-chartjs": "^3.5.1",
     "vue-html2pdf": "^1.8.0",
+    "vue-mqtt": "^2.0.3",
     "vuetify-numeric": "^0.1.7"
   },
   "devDependencies": {
