@@ -1,5 +1,5 @@
 export default function ({$axios}) {
     if (process.client) {
-      $axios.defaults.baseURL = window.location.origin
+      $axios.defaults.baseURL = 'http://'+window.location.hostname+':8000'
     }
   }

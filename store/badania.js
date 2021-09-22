@@ -43,7 +43,7 @@ export const mutations = {
         ss.push(cis[i].cisnienie);
       state.badanie.cisnienie = ss
       console.log(Math.max(...ss)/10)
-      state.badanie.maxCisnienie = (Math.max(...ss)) /10
+      state.badanie.maxCisnienie = (Math.max(...ss)) /100
     }
 }
  

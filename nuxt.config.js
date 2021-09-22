@@ -5,7 +5,7 @@ export default {
   target: 'static',
   server: {
     port: 3000, // default: 3000
-    //host: '0.0.0.0', // default: localhost,
+    host: '0.0.0.0', // default: localhost,
     timing: false
   },
 
@@ -40,7 +40,7 @@ export default {
     {src: '~/plugins/vue-apexchart.js', mode: 'client'},
     { src: '@/plugins/numeric', mode: 'client' },
     { src: '@/plugins/mqtt.js', mode : 'client'},
-  //  { src: '@/plugins/axios-url' },
+    // { src: '@/plugins/axios-url' },
     ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -63,7 +63,7 @@ export default {
   ],
 
   axios: {
-    baseURL: 'http://10.8.0.4:8100', 
+    baseURL: 'http://10.1.10.108:8000', 
   },
 
   toast: {

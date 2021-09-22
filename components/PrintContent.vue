@@ -132,7 +132,7 @@
         </tr>
       </table>
 
-      <img
+      <img v-if="dane.homolog.tank == 1"
         style="
           padding-top: 20px;
           display: block;
@@ -142,7 +142,43 @@
         "
         width="600px"
         height="200px"
-        src="~/assets/WEW.jpg"
+        src="~/assets/wew.png"
+      />
+      <img v-if="dane.homolog.tank == 2"
+        style="
+          padding-top: 20px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+        "
+        width="600px"
+        height="200px"
+        src="~/assets/zew.png"
+      />      
+      <img v-if="dane.homolog.tank == 3"
+        style="
+          padding-top: 20px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+        "
+        width="600px"
+        height="200px"
+        src="~/assets/zew.png"
+      />
+      <img v-if="dane.homolog.tank == 4"
+        style="
+          padding-top: 20px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+        "
+        width="600px"
+        height="200px"
+        src="~/assets/tero.png"
       />
       <table border="0" style="padding-top: 20px">
         <tr style="vertical-align: top; text-align: left">
@@ -207,7 +243,7 @@
         <tr v-for="pomiar in wyniki" :key="pomiar.id">
           <td>
             <p align="center">
-              <strong>{{ pomiar.cisnienie / 10 }}</strong>
+              <strong>{{ pomiar.cisnienie / 100 }}</strong>
             </p>
           </td>
           <td>
